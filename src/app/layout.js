@@ -20,6 +20,11 @@ export const metadata = {
   title: "Gunjan Bishnoi | Frontend Developer",
   description: "Creative Frontend Developer crafting modern interactive web experiences with React, Next.js, and Framer Motion.",
   keywords: ["Gunjan Bishnoi", "Frontend Developer", "Web Design", "React Developer", "Next.js Portfolio", "Framer Motion"],
+  icons: {
+    icon: "/favicon.svg?v=1",
+    shortcut: "/favicon.svg?v=1",
+    apple: "/icon.svg?v=1",
+  },
 };
 
 export default function RootLayout({ children }) {
