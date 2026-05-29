@@ -139,7 +139,7 @@ html {
   opacity: 0.03;
   z-index: 9999;
   pointer-events: none;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-image: url("/noise.svg");
 }
 
 @layer utilities {

@@ -45,7 +45,12 @@ const Navbar = () => {
     handleScroll(); // Initial check
 
     // Check system preference
-    const savedTheme = localStorage.getItem("theme") || "light";
+    let savedTheme = "light";
+    try {
+      savedTheme = localStorage.getItem("theme") || "light";
+    } catch (e) {
+      console.warn("localStorage is not accessible:", e);
+    }
     setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
 
@@ -55,7 +60,11 @@ const Navbar = () => {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    try {
+      localStorage.setItem("theme", newTheme);
+    } catch (e) {
+      console.warn("localStorage is not accessible:", e);
+    }
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
