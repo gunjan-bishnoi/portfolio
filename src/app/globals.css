@@ -36,10 +36,12 @@
   --card: #0c0c0e;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 body {
@@ -138,4 +140,16 @@ html {
   z-index: 9999;
   pointer-events: none;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
+@layer utilities {
+  @keyframes shimmer {
+    100% { transform: translateX(-100%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+  .stroke-text {
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.1);
+  }
 }

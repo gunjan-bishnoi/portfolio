@@ -6,10 +6,8 @@ export const techStack = [
   { name: "JavaScript", category: "Core", level: 92 },
   { name: "Tailwind CSS", category: "Styling", level: 95 },
   { name: "Framer Motion", category: "Animations", level: 88 },
-  { name: "Firebase", category: "Backend", level: 85 },
-  { name: "Node.js", category: "Backend", level: 80 },
+
   { name: "Git", category: "Tools", level: 90 },
-  { name: "TypeScript", category: "Core", level: 85 },
 ];
 
 export const projectData = [
@@ -17,16 +15,16 @@ export const projectData = [
     id: 1,
     title: "Web Chat App",
     description: "Modern chat interface with responsive UI, search functionality, and smooth frontend interactions.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop",
+    image: "/images/projects/chat-app.jpg",
     link: "https://web-chat-eosin-six.vercel.app/",
     github: "https://github.com/gunjanbishnoi/web-chat-app",
-    tech: ["React", "Firebase", "Tailwind CSS"],
+    tech: ["React", "Tailwind CSS"],
   },
   {
     id: 2,
     title: "Trump Dog",
     description: "A playful landing page for a meme coin project with vibrant design and custom animations.",
-    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1470&auto=format&fit=crop",
+    image: "/images/projects/trump-dog.jpg",
     link: "https://trump-rose.vercel.app/",
     github: "https://github.com/gunjanbishnoi/trump-rose",
     tech: ["Next.js", "Framer Motion", "Vanilla CSS"],
@@ -35,7 +33,7 @@ export const projectData = [
     id: 3,
     title: "Time Waste Analyzer",
     description: "Productivity-focused application for analyzing time usage with modern dashboard UI.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1470&auto=format&fit=crop",
+    image: "/images/projects/time-analyzer.jpg",
     link: "http://time-waste-analyzer.vercel.app/",
     github: "https://github.com/gunjanbishnoi/time-waste-analyzer",
     tech: ["JavaScript", "Chart.js", "Tailwind CSS"],

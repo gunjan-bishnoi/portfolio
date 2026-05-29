@@ -9,8 +9,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-secondary/20 !pt-10 !pb-8 md:!pt-20 !md:pb-10 border-t border-border/50 mt-20 w-full flex justify-center overflow-hidden">
-      <div className="w-full max-w-7xl px-8 md:px-16 lg:px-24">
+    <footer className="relative bg-secondary/20 !pt-10 !pb-8 md:!pt-20 md:!pb-10 border-t border-border/50 mt-20 w-full flex justify-center overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 md:gap-8 mb-16">
 

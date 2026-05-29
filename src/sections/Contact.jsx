@@ -40,11 +40,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20 px-4 md:px-0 w-full flex justify-center relative overflow-hidden">
+    <section id="contact" className="pt-16 md:pt-24 px-4 w-full flex justify-center relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
 
-      <div className="w-full max-w-7xl px-8 md:px-16 lg:px-24">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
 
           {/* Text Content */}
@@ -54,14 +54,14 @@ const Contact = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-accent font-bold uppercase tracking-widest text-sm mb-6 inline-block">
+            <span className="text-accent font-bold uppercase tracking-widest text-sm inline-block">
               Get in Touch
             </span>
-            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9]">
+            <h2 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-6 md:mb-8 leading-[0.9]">
               Let's build <br />
               something <span className="text-primary italic">great</span>.
             </h2>
-            <p className="text-xl text-muted font-light leading-relaxed mb-12 max-w-md">
+            <p className="text-lg sm:text-xl text-muted font-light leading-relaxed mb-8 md:mb-12 max-w-md">
               Have a project in mind or just want to say hello?
               I'm always open to discussing new opportunities and creative ideas.
             </p>
@@ -110,11 +110,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="bg-secondary/20 backdrop-blur-xl border border-border/50 px-16 py-12 md:px-24 md:py-16 rounded-[3rem] shadow-2xl relative"
+            className="bg-secondary/20 backdrop-blur-xl border border-border/50 py-8 px-4 md:py-10 md:px-8 rounded-[2rem] shadow-2xl relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-[2.5rem] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-[2rem] pointer-events-none" />
 
-            <form className="flex flex-col gap-10 relative z-10" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-6 relative z-10" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted/80 ml-2">What's your name?</label>
                 <input
@@ -122,7 +122,7 @@ const Contact = () => {
                   name="name"
                   required
                   placeholder="John Doe"
-                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-12 py-7 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg leading-relaxed shadow-sm"
+                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg leading-relaxed shadow-sm"
                 />
               </div>
 
@@ -133,7 +133,7 @@ const Contact = () => {
                   name="email"
                   required
                   placeholder="john@example.com"
-                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-12 py-7 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg leading-relaxed shadow-sm"
+                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg leading-relaxed shadow-sm"
                 />
               </div>
 
@@ -144,7 +144,7 @@ const Contact = () => {
                   name="message"
                   required
                   placeholder="Hello Gunjan, I would like to discuss..."
-                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-12 py-7 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg resize-none leading-relaxed shadow-sm"
+                  className="bg-background/50 backdrop-blur-md border border-border/50 rounded-2xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-lg resize-none leading-relaxed shadow-sm"
                 />
               </div>
 
@@ -155,7 +155,7 @@ const Contact = () => {
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`group relative w-full py-6 mt-4 rounded-2xl font-bold flex items-center justify-center gap-4 overflow-hidden transition-all shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] ${
+                className={`group relative w-full py-4 mt-2 rounded-xl font-bold flex items-center justify-center gap-4 overflow-hidden transition-all shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] ${
                   status === "success" ? "bg-green-500 text-white" :
                   status === "error" ? "bg-red-500 text-white" :
                   "bg-primary text-background"

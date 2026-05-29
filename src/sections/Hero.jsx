@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/data";
+import { RotatingBadgeIcon } from "@/components/Icons";
 
 const TypingText = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -34,7 +35,7 @@ const TypingText = ({ text }) => {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-10">
+    <section id="home" className="relative h-screen min-h-[650px] flex items-center justify-center overflow-hidden bg-background pt-24 pb-12">
       {/* Animated gradient background & abstract floating elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
@@ -69,10 +70,10 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-12 md:py-0 flex flex-col items-center text-center shrink-0">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12 flex flex-col items-center text-center shrink-0">
 
         {/* Top badge */}
-        <div className="overflow-hidden mb-4 md:mb-6 shrink-0">
+        <div className="overflow-hidden mb-4 shrink-0">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -85,23 +86,23 @@ const Hero = () => {
         </div>
 
         {/* Main Heading with text reveal */}
-        <div className="relative mb-4 md:mb-6 shrink-0">
+        <div className="relative mb-4 shrink-0">
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="text-[4rem] md:text-[7rem] lg:text-[9rem] font-bold leading-[0.85] tracking-tighter text-foreground"
+              className="text-[3.5rem] sm:text-[4rem] md:text-[7rem] lg:text-[9rem] font-bold leading-[0.85] tracking-tighter text-foreground"
             >
               GUNJAN
             </motion.h1>
           </div>
-          <div className="overflow-hidden pb-4">
+          <div className="overflow-hidden pb-2">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="text-[4rem] md:text-[7rem] lg:text-[9rem] font-bold leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent italic"
+              className="text-[3.5rem] sm:text-[4rem] md:text-[7rem] lg:text-[9rem] font-bold leading-[0.85] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent italic"
             >
               BISHNOI
             </motion.h1>
@@ -115,21 +116,7 @@ const Hero = () => {
             className="absolute -top-12 -right-24 hidden lg:flex items-center justify-center w-40 h-40"
           >
             <div className="absolute inset-0 bg-background/50 rounded-full blur-xl -z-10" />
-            <motion.svg
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              viewBox="0 0 100 100"
-              className="w-full h-full text-muted overflow-visible"
-            >
-              <defs>
-                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
-              </defs>
-              <text fontSize="10.5" fontWeight="bold" letterSpacing="1.8" className="fill-current uppercase">
-                <textPath href="#circlePath" startOffset="0%">
-                  • Creative Developer • UI Designer
-                </textPath>
-              </text>
-            </motion.svg>
+            <RotatingBadgeIcon className="w-full h-full text-muted overflow-visible" />
             <div className="absolute w-2 h-2 bg-primary rounded-full" />
           </motion.div>
         </div>
@@ -139,9 +126,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-2xl h-[60px] flex items-center justify-center mb-6 md:mb-10 shrink-0"
+          className="max-w-2xl min-h-[60px] h-auto flex items-center justify-center mb-6 shrink-0 py-2"
         >
-          <p className="text-lg md:text-2xl text-muted font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl text-muted font-light leading-relaxed">
             <TypingText text={siteConfig.tagline} />
           </p>
         </motion.div>
@@ -151,11 +138,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center mb-8 md:mb-16 w-full sm:w-auto shrink-0"
+          className="flex flex-col sm:flex-row gap-6 items-center w-full sm:w-auto shrink-0"
         >
           <a
             href="#projects"
-            className="w-full sm:w-auto min-w-[250px] md:min-w-[300px] h-[50px] group relative px-16 md:px-24 bg-primary text-background rounded-full font-bold flex items-center justify-center gap-4 overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all shrink-0"
+            className="w-full max-w-[280px] sm:max-w-none sm:w-auto sm:min-w-[250px] md:min-w-[300px] h-[50px] group relative px-8 sm:px-16 md:px-24 bg-primary text-background rounded-full font-bold flex items-center justify-center gap-4 overflow-hidden shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hover:scale-105 active:scale-95 transition-all shrink-0"
           >
             <div className="absolute inset-0 w-0 bg-white/20 transition-all duration-[250ms] ease-out group-hover:w-full" />
             <span className="relative z-10 whitespace-nowrap">View Projects</span>
@@ -164,7 +151,7 @@ const Hero = () => {
 
           <a
             href="#contact"
-            className="w-full sm:w-auto min-w-[250px] md:min-w-[300px] h-[50px] px-16 md:px-24 bg-secondary text-foreground rounded-full font-bold flex items-center justify-center gap-4 hover:bg-secondary/80 hover:scale-105 active:scale-95 transition-all border border-border/50 shrink-0"
+            className="w-full max-w-[280px] sm:max-w-none sm:w-auto sm:min-w-[250px] md:min-w-[300px] h-[50px] px-8 sm:px-16 md:px-24 bg-secondary text-foreground rounded-full font-bold flex items-center justify-center gap-4 hover:bg-secondary/80 hover:scale-105 active:scale-95 transition-all border border-border/50 shrink-0"
           >
             <span className="whitespace-nowrap">Contact Me</span>
           </a>
@@ -175,7 +162,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="flex gap-8 items-center mt-12 shrink-0"
+          className="flex gap-6 items-center mt-8 shrink-0"
         >
           {[
             { icon: FaGithub, href: siteConfig.socials.github },
@@ -201,7 +188,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 hidden md:flex"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
         <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-muted">Scroll</span>
         <div className="w-[1px] h-12 bg-border relative overflow-hidden">

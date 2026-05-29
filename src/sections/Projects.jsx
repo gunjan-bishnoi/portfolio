@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import React, { useState } from "react";
+import Image from "next/image";
 
 import { projectData } from "@/components/Helper";
 
@@ -55,7 +56,7 @@ const ProjectCard = ({ project, index }) => {
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="relative w-full rounded-[2rem] bg-secondary/30 backdrop-blur-xl border border-border/50 p-6 md:p-8 flex flex-col lg:flex-row gap-8 lg:gap-12 cursor-pointer shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-shadow duration-500"
+      className="relative w-full rounded-[2rem] bg-secondary/30 backdrop-blur-xl border border-border/50 p-6 md:p-8 flex flex-col lg:flex-row gap-8 cursor-pointer shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] transition-shadow duration-500"
     >
       {/* Project Image Area (Expand on Hover) */}
       <motion.div
@@ -69,10 +70,12 @@ const ProjectCard = ({ project, index }) => {
           className="w-full h-full relative"
         >
           <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors z-0" />
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover block"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover block"
           />
         </motion.div>
 
@@ -103,11 +106,11 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
 
-        <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 group-hover:text-primary transition-colors">
+        <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 group-hover:text-primary transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-lg text-muted font-light leading-relaxed mb-8">
+        <p className="text-base md:text-lg text-muted font-light leading-relaxed mb-6 md:mb-8">
           {project.description}
         </p>
 
@@ -130,21 +133,21 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" style={{ paddingTop: '5rem', paddingBottom: '5rem' }} className="w-full flex justify-center overflow-hidden">
-      <div className="w-full max-w-7xl px-8 md:px-16 lg:px-24">
+    <section id="projects" className="pt-16 md:pt-24 w-full flex justify-center overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
 
         {/* Section Header */}
-        <div className="mb-28 md:mb-32 text-center relative z-10">
-          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-6 inline-block">
+        <div className="mb-12 md:mb-16 text-center relative z-10">
+          <span className="text-accent font-bold uppercase tracking-widest text-sm inline-block">
             Selected Works
           </span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
             Digital <span className="text-primary italic">Creations</span>.
           </h2>
         </div>
 
         {/* Projects List */}
-        <div className="flex flex-col gap-12 lg:gap-24" style={{ perspective: "1000px" }}>
+        <div className="flex flex-col gap-12 lg:gap-16" style={{ perspective: "1000px" }}>
           {projectData.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

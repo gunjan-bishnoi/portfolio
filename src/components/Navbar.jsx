@@ -80,7 +80,7 @@ const Navbar = () => {
           : "bg-transparent py-6"
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link
           href="/"
@@ -91,15 +91,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-2 lg:gap-8">
-          <div className="flex items-center gap-3 bg-secondary/50 p-1 rounded-full border border-border/50">
+        <div className="hidden md:flex items-center gap-1 lg:gap-4 xl:gap-8">
+          <div className="flex items-center gap-1 lg:gap-3 bg-secondary/50 p-1 rounded-full border border-border/50">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setActiveSection(link.name)}
                 className={cn(
-                  "relative px-7 py-2 text-[12px] font-bold tracking-widest uppercase transition-colors rounded-full",
+                  "relative px-2 md:px-3 lg:px-5 xl:px-7 py-2 text-[9px] lg:text-[11px] xl:text-[12px] font-bold tracking-widest uppercase transition-colors rounded-full",
                   activeSection === link.name ? "text-primary" : "text-muted hover:text-foreground"
                 )}
               >
@@ -133,15 +133,21 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex items-center gap-4 md:hidden z-[102]">
+        <div className="flex items-center gap-2 sm:gap-4 md:hidden z-[102]">
+          <Link
+            href="#contact"
+            className="hidden sm:inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 bg-primary text-background rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-transform shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] whitespace-nowrap"
+          >
+            Let's Talk
+          </Link>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-secondary/50 border border-border/50 text-muted hover:text-foreground transition-all"
+            className="p-2 rounded-full bg-secondary/50 border border-border/50 text-muted hover:text-foreground transition-all shrink-0"
             aria-label="Toggle theme"
           >
             {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          
+
           {/* Animated Hamburger Menu */}
           <button
             className="relative w-10 h-10 flex flex-col items-center justify-center gap-[6px] rounded-full bg-secondary/50 border border-border/50 overflow-hidden"
@@ -175,9 +181,9 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20, transition: { delay: 0.2, duration: 0.3 } }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[101] flex flex-col items-center justify-center md:hidden pt-20"
+            className="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[101] flex flex-col items-center justify-center md:hidden pt-24 pb-6 overflow-y-auto"
           >
-            <div className="flex flex-col items-center gap-8 w-full px-6">
+            <div className="flex flex-col items-center gap-3 sm:gap-5 w-full px-6">
               {navLinks.map((link, idx) => (
                 <motion.div
                   initial={{ opacity: 0, y: 40 }}
@@ -194,7 +200,7 @@ const Navbar = () => {
                       setIsMobileMenuOpen(false);
                     }}
                     className={cn(
-                      "text-4xl md:text-5xl font-bold tracking-tighter transition-colors block py-2",
+                      "text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter transition-colors block py-1.5",
                       activeSection === link.name ? "text-primary" : "text-muted hover:text-foreground"
                     )}
                   >
@@ -202,18 +208,17 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.1 + navLinks.length * 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="mt-8 w-full max-w-xs"
+                className="mt-4 sm:mt-6 w-full max-w-xs sm:hidden"
               >
                 <Link
                   href="#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 bg-primary text-background rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-xl"
+                  className="w-full py-3 sm:py-4 bg-primary text-background rounded-full text-sm font-bold uppercase tracking-widest flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-xl"
                 >
                   Let's Talk
                 </Link>
